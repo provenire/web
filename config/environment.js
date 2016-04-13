@@ -15,7 +15,8 @@ module.exports = function(environment) {
 
     APP: {},
 
-    apiBase: 'https://api2.antiquarium.io'
+    apiBase: 'https://api2.antiquarium.io',
+    authorizer: 'authorizer:token'
   };
 
   if (environment === 'development') {
@@ -38,5 +39,29 @@ module.exports = function(environment) {
 
   }
 
+
+  // Simple Auth
+  ENV['ember-simple-auth'] = {
+    authenticationRoute: 'login',
+    // routeAfterAuthentication: 'dashboard',
+    // routeIfAlreadyAuthenticated: 'dashboard'
+  }
+
+  ENV['ember-simple-auth-token'] = {
+    serverTokenEndpoint: ENV.apiBase + '/users/token_auth',
+    identificationField: 'email',
+    passwordField: 'password',
+    tokenPropertyName: 'token',
+    tokenExpireName: 'exp',
+    authorizationPrefix: 'Bearer ',
+    authorizationHeaderName: 'Authorization',
+    refreshAccessTokens: true,
+    serverTokenRefreshEndpoint: ENV.apiBase + '/users/token_refresh',
+    refreshLeeway: 300,
+    timeFactor: 1
+  }
+
+
+  // Export
   return ENV;
 };
