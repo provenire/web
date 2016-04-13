@@ -1,0 +1,19 @@
+.page-container {
+  height: 100vh;
+}
+
+.login-wrapper {
+  background-color: #000;
+}
+
+.login-wrapper .bg-pic {
+  background-color: #000;
+}
+
+.login-wrapper .bg-pic > img {
+  opacity: 0.7;
+}
+
+.login-container > * {
+  height: 100vh;
+}

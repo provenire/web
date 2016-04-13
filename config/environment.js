@@ -15,6 +15,12 @@ module.exports = function(environment) {
 
     APP: {},
 
+    // Fonts
+    googleFonts: [
+      'Montserrat:400,700'
+    ],
+
+    // Settings
     apiBase: 'https://api2.antiquarium.io',
     authorizer: 'authorizer:token'
   };

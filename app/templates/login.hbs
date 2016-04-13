@@ -1,7 +1,47 @@
-<form {{action 'authenticate' on='submit'}}>
-  <label for="email">Email</label>
-  {{input id='email' placeholder='Enter Email' value=identification}}
-  <label for="password">Password</label>
-  {{input id='password' placeholder='Enter Password' type='password' value=password}}
-  <button type="submit">Login</button>
-</form>
+<div class="login-wrapper ">
+  <!-- START Login Background Pic Wrapper-->
+  <div class="bg-pic">
+    <!-- START Background Pic-->
+    <img class="lazy" src="/assets/antiquarium/login/login.jpg" data-src="/assets/antiquarium/login/login.jpg" data-src-retina="/assets/antiquarium/login/login.jpg">
+    <!-- END Background Pic-->
+
+    <!-- START Background Caption-->
+    <div class="bg-caption pull-bottom sm-pull-bottom text-white p-l-20 m-b-20">
+      <h2 class="semi-bold text-white">Antiquities Trade Intelligence</h2>
+      <p class="small">
+        Copyright © 2016 Antiquarium LLC. All rights reserved.
+      </p>
+    </div>
+    <!-- END Background Caption-->
+  </div>
+  <!-- END Login Background Pic Wrapper-->
+  <!-- START Login Right Container-->
+  <div class="login-container bg-white">
+    <div class="p-l-50 m-l-20 p-r-50 m-r-20 p-t-50 sm-p-l-15 sm-p-r-15 sm-p-t-40">
+      <img alt="logo" width="190" src="/assets/antiquarium/antiquarium/antiquarium@2x.png" data-src="/assets/antiquarium/antiquarium/antiquarium@2x.png" data-src-retina="/assets/antiquarium/antiquarium/antiquarium.png@2x.png">
+
+      <p class="p-t-35">Login to Antiquarium Data Platform</p>
+
+      <form {{action 'authenticate' on='submit'}} id="form-login" class="p-t-15">
+        <div class="form-group form-group-default">
+          <label for="email">Email</label>
+          <div class="controls">
+            {{input value=identification type='email' class="form-control" required=true}}
+          </div>
+        </div>
+
+        <div class="form-group form-group-default">
+          <label for="password">Password</label>
+          <div class="controls">
+            {{input value=password class='form-control' type='password' required=true}}
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-cons m-t-10">Login</button>
+      </form>
+
+
+    </div>
+  </div>
+  <!-- END Login Right Container-->
+</div>
