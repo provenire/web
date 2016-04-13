@@ -1,7 +1,7 @@
 {
   "name": "web",
   "version": "0.0.0",
-  "description": "Small description for web goes here",
+  "description": "Antiquarium Web App",
   "private": true,
   "directories": {
     "doc": "doc",
