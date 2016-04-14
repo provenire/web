@@ -1,0 +1,98 @@
+<div id="appMenu" class="sidebar-overlay-slide from-top">
+</div>
+<!-- BEGIN SIDEBAR HEADER -->
+<div class="sidebar-header">
+  <img alt="logo" class="brand" width="40" src="/assets/antiquarium/logo/logo.white.png" data-src="/assets/antiquarium/logo/logo.white.png" data-src-retina="/assets/antiquarium/logo/logo.white@2x.png">
+</div>
+<!-- END SIDEBAR HEADER -->
+<!-- BEGIN SIDEBAR MENU -->
+<div class="sidebar-menu">
+  <ul class="menu-items">
+
+    <li class="m-t-30 {{if dashboardRoute "active"}}">
+      {{#link-to 'dashboard' class='detailed'}}
+        <span class="title">Dashboard</span>
+      {{/link-to}}
+      <span class="icon-thumbnail"><i class="fa fa-dashboard"></i></span>
+    </li>
+
+
+    <li class="">
+      <a href="#" class="detailed">
+        <span class="title">Search</span>
+      </a>
+      <span class="icon-thumbnail"><i class="fa fa-search"></i></span>
+    </li>
+
+
+    <li class={{if exploreRoute "active"}}>
+      <a href="javascript:;">
+        <span class="title">Explore</span>
+        <span class="arrow {{if exploreRoute "active open"}}"></span>
+      </a>
+      <span class="icon-thumbnail "><img src="/assets/antiquarium/svg/explore.svg" width="15"></span>
+
+      <ul class="sub-menu">
+        <li class={{if artifactsRoute "active"}}>
+          {{#link-to 'artifacts.index'}}Artifacts{{/link-to}}
+          <span class="icon-thumbnail"><i class="fa fa-cubes"></i></span>
+        </li>
+
+        <li class={{if peopleRoute "active"}}>
+          {{#link-to 'people'}}People{{/link-to}}
+          <span class="icon-thumbnail"><i class="fa fa-users"></i></span>
+        </li>
+
+        <li class={{if placesRoute "active"}}>
+          {{#link-to 'places'}}Places{{/link-to}}
+          <span class="icon-thumbnail"><i class="pg-map"></i></span>
+        </li>
+
+        <li class={{if sourcesRoute "active"}}>
+          {{#link-to 'sources'}}Sources{{/link-to}}
+          <span class="icon-thumbnail"><i class="fa fa-sitemap"></i></span>
+        </li>
+
+      </ul>
+    </li>
+
+
+    <li class="">
+      <a href="javascript:;">
+        <span class="title">Tasks</span>
+      </a>
+      <span class="icon-thumbnail"><i class="fa fa-puzzle-piece"></i></span>
+    </li>
+
+
+    <li class="">
+      <a href="javascript:;">
+        <span class="title">Discussion</span>
+      </a>
+      <span class="icon-thumbnail"><i class="fa fa-quote-right"></i></span>
+    </li>
+
+
+    <li class="">
+      <a href="#">
+        <span class="title">Get Help</span>
+        <span class=" arrow"></span>
+      </a>
+      <span class="icon-thumbnail "><i class="fa fa-question-circle"></i></span>
+      <ul class="sub-menu">
+        <li class="">
+          <a href="#">Guides/Docs</a>
+          <span class="icon-thumbnail"><i class="fa fa-file-text-o"></i></span>
+        </li>
+        <li class="">
+          <a href="#">FAQs</a>
+          <span class="icon-thumbnail"><i class="fa fa-check-square"></i></span>
+        </li>
+      </ul>
+    </li>
+
+
+  </ul>
+  <div class="clearfix"></div>
+</div>
+<!-- END SIDEBAR MENU -->

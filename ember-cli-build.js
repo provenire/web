@@ -77,15 +77,15 @@ module.exports = function(defaults) {
    * Assets
    */
   var assets = [
-    // new Funnel('vendor/assets/plugins/font-awesome', {
-    //   srcDir:  '/fonts', destDir: '/assets/fonts', files: ['**/*.eot','**/*.svg','**/*.ttf','**/*.woff']
-    // }),
+    new Funnel('vendor/assets/plugins/font-awesome', {
+      srcDir:  '/fonts', destDir: '/fonts', files: ['**/*.eot','**/*.svg','**/*.ttf','**/*.woff', '**/*.woff2']
+    }),
     // new Funnel('vendor/assets/plugins/boostrapv3', {
     //   srcDir:  '/fonts', destDir: '/assets/fonts', files: ['**/*.eot','**/*.svg','**/*.ttf','**/*.woff']
     // }),
-    // new Funnel('vendor/pages/assets/fonts', {
-    //   srcDir:  '/pages-icon', destDir: '/assets/fonts/pages-icon', files: ['**/*.eot','**/*.svg','**/*.ttf','**/*.woff']
-    // }),
+    new Funnel('vendor/pages/fonts', {
+      srcDir:  '/pages-icon', destDir: '/fonts/pages-icon', files: ['**/*.eot','**/*.svg','**/*.ttf','**/*.woff']
+    }),
     // new Funnel('vendor/pages/fonts', {
     //   srcDir:  '/montserrat', destDir: '/fonts/montserrat', files: ['**/*.svg','**/*.ttf']
     // }),

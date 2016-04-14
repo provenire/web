@@ -1,1 +1,36 @@
-{{outlet}}
+{{#if loginPath}}
+  {{outlet}}
+{{else}}
+  {{side-bar activeRoute=currentPath}}
+
+  <!-- PAGE CONTAINER -->
+  <div class="page-container">
+
+    {{top-bar}}
+
+    <div class="page-content-wrapper">
+      <div class="content">
+
+        {{outlet}}
+
+      </div>
+
+
+      <!-- START FOOTER -->
+      <div class="container-fluid container-fixed-lg footer">
+        <div class="copyright sm-text-center">
+          <p class="small no-margin pull-left sm-pull-reset">
+            <span class="hint-text">Copyright © 2016</span>
+            <span class="font-montserrat">Antiquarium LLC</span>.
+            <span class="hint-text">All rights reserved.</span>
+            <span class="sm-block"><a href="#" class="m-l-10 m-r-10">Terms of use</a> | <a href="/legal/privacy_policy" class="m-l-10">Privacy Policy</a>
+            </span>
+          </p>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <!-- END FOOTER -->
+    </div>
+  </div>
+  <!-- / PAGE CONTAINER -->
+{{/if}}
