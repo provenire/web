@@ -79,12 +79,12 @@
               </span>
             </a>
             <ul class="dropdown-menu profile-dropdown" role="menu">
-              {{#link-to 'users.show' session.currentUser.slug tagName='li' href=false}}
-                {{#link-to 'users.show' session.currentUser.slug}}<i class="fa fa-user"></i> Profile{{/link-to}}
+              {{#link-to 'users.show' session.currentUser tagName='li' href=false}}
+                {{#link-to 'users.show' session.currentUser}}<i class="fa fa-user"></i> Profile{{/link-to}}
               {{/link-to}}
 
-              {{#link-to 'users.edit' session.currentUser.slug tagName='li' href=false}}
-                {{#link-to 'users.edit' session.currentUser.slug}}<i class="pg-settings_small"></i> Settings{{/link-to}}
+              {{#link-to 'users.edit' session.currentUser tagName='li' href=false}}
+                {{#link-to 'users.edit' session.currentUser}}<i class="pg-settings_small"></i> Settings{{/link-to}}
               {{/link-to}}
 
               <li class="bg-master-lighter">

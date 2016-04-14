@@ -12,7 +12,7 @@ export default Model.extend({
   updatedAt:   attr('date'),
 
   // Artifact
-  alternateNames: attr()
+  alternateNames: attr(),
   artist:         attr('string'),
   dimensions:     attr('string'),
   date_created:   attr('string'),
