@@ -3,6 +3,6 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
   title: function(tokens) {
-    return (tokens.length ? tokens.join(' | ') + ' | ' : '') + 'Antiquarium';
+    return (tokens.length ? tokens.reverse().join(' | ') + ' | ' : '') + 'Antiquarium';
   },
 });
