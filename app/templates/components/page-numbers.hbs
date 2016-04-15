@@ -1,0 +1,26 @@
+<li class="prev {{unless canStepBackward 'disabled'}}">
+  <a href="javascript:;" {{action "incrementPage" -1}}>
+    <i class="pg-arrow_left"></i>
+  </a>
+</li>
+
+{{#each pageArray as |page|}}
+  {{#if false}}
+  {{/if}}
+  {{#if (equal currentPage page)}}
+    <li class="active">
+      <a>{{page}}</a>
+    </li>
+  {{else}}
+    <li>
+      <a href="javascript:;" {{action "pageClicked" page}}>{{page}}</a>
+    </li>
+  {{/if}}
+{{/each}}
+
+
+<li class="next {{unless canStepForward 'disabled'}}">
+  <a href="javascript:;" {{action "incrementPage" 1}}>
+    <i class="pg-arrow_right"></i>
+  </a>
+</li>

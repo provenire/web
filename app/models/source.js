@@ -16,7 +16,7 @@ export default Model.extend({
   dateCreated: attr('date'),
   attribution: attr('string'),
   identifier:  attr('string'),
-  thumbnail:   attr('string'),
+  image:       attr(),
   document:    attr('string'),
 
   // Associations
