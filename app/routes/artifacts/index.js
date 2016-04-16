@@ -7,6 +7,11 @@ export default Ember.Route.extend({
   },
 
   model(params) {
-    return this.store.query('artifact', { page: params.page, size: params.size, include: 'sources' });
+    return this.store.query('artifact', {
+      page: params.page,
+      size: params.size,
+      sort: 'name',
+      include: 'sources'
+    });
   }
 });

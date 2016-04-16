@@ -12,6 +12,7 @@ export default Model.extend({
   updatedAt:   attr('date'),
 
   // Source
+  kind:        attr('string'),
   authors:     attr('string'),
   dateCreated: attr('date'),
   attribution: attr('string'),

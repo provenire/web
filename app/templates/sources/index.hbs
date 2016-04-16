@@ -1,1 +1,73 @@
-{{outlet}}
+<!-- START JUMBOTRON -->
+<div class="jumbotron no-margin" data-pages="parallax">
+  <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+    <div class="inner">
+      <h3>Explore Sources</h3>
+    </div>
+  </div>
+</div>
+<!-- END JUMBOTRON -->
+
+
+<div class="container-fluid container-fixed-lg">
+  <!-- START BREADCRUMB -->
+  <ul class="breadcrumb">
+    <li>
+      <p>Sources</p>
+    </li>
+    <li><span class="active"><strong>{{startEntry}} - {{endEntry}}</strong> of {{total}}</span>
+    </li>
+  </ul>
+  <!-- END BREADCRUMB -->
+
+  <div class="dataTables_wrapper">
+    <div class="table-responsive">
+      <table class="table m-b-0">
+        <thead>
+          <th style="width:10%;padding-top:0;padding-bottom:0;"></th>
+          <th style="width:30%;padding-top:0;padding-bottom:0;"></th>
+          <th style="width:45%;padding-top:0;padding-bottom:0;"></th>
+          <th style="width:15%;padding-top:0;padding-bottom:0;"></th>
+        </thead>
+        <tbody>
+          {{#each model as |source|}}
+          <tr>
+            <td class="v-align-middle">
+              {{#link-to 'sources.show' source}}
+                {{image-block img=source.picture.image.index width=100}}
+              {{/link-to}}
+            </td>
+            <td>
+              <h4 class="no-margin">
+                {{#link-to 'sources.show' source class='text-black'}}{{source.name}}{{/link-to}}
+              </h4>
+            </td>
+            <td>
+              <p>{{source.description}}</p>
+            </td>
+            <td>
+              <dl>
+                <dt>Last Updated</dt>
+                <dd>{{moment-format source.updatedAt 'LL'}}</dd>
+
+                <dt>Kind</dt>
+                <dd>{{capitalize-string source.kind}}</dd>
+              </dl>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="row m-b-20">
+      <div class="dataTables_paginate paging_bootstrap pagination pull-right">
+        {{page-numbers recordCount=total currentPage=page pageSize=size}}
+      </div>
+
+      <div class="dataTables_info">
+        Showing <strong>{{startEntry}} - {{endEntry}}</strong> of {{total}} entries
+      </div>
+    </div>
+  </div>
+</div>

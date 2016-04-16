@@ -1,10 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model() {
-    return this.store.query('source', { page: this.get('page'), size: this.get('pageSize') });
+  queryParams: {
+    page: { refreshModel: true },
+    size: { refreshModel: true }
   },
 
-  page: 1,
-  pageSize: 10
+  model(params) {
+    return this.store.query('source', { page: params.page, size: params.size, sort: 'name' });
+  }
 });
