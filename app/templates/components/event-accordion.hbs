@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href={{uuidHref}}>
+        <div class="row">
+          <div class="col-sm-2" style="width:10%"><strong>{{moment-format event.date 'YYYY'}}</strong></div>
+          <div class="col-sm-10">{{event.name}}</div>
+        </div>
+      </a>
+    </h4>
+  </div>
+  <div class="panel-collapse collapse" id={{event.uuid}}>
+    <div class="panel-body">
+      <p class="small hint-text">{{event.name}}</p>
+      <p>{{event.description}}</p>
+      <p class="pull-right small">
+        {{#link-to 'events.show' event}}See event{{/link-to}}
+      </p>
+    </div>
+  </div>
+</div>

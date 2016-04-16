@@ -1,1 +1,141 @@
-{{outlet}}
+<!-- START JUMBOTRON -->
+<div class="jumbotron" data-pages="">
+  <div class="container-fluid container-fixed-lg">
+    <div class="inner">
+      <!-- START BREADCRUMB -->
+      <ul class="breadcrumb">
+        <li>
+          <p>People</p>
+        </li>
+        <li><span class="active">{{model.name}}</span>
+        </li>
+      </ul>
+      <!-- END BREADCRUMB -->
+
+      <div class="container-md-height m-b-20">
+        <div class="row row-md-height">
+          <div class="col-lg-7 col-md-6 col-md-height col-middle bg-white">
+            <!-- START PANEL -->
+            <div class="full-height">
+              <div class="panel-body text-center">
+                {{image-block src=model.picture.image.show width=500 classes="image-responsive-height demo-mw-500"}}
+              </div>
+            </div>
+            <!-- END PANEL -->
+          </div>
+          <div class="col-lg-5 col-md-height col-md-6 col-top">
+            <!-- START PANEL -->
+            <div class="panel panel-transparent">
+              <div class="panel-heading">
+                <div class="panel-title">Person Summary
+                </div>
+              </div>
+              <div class="panel-body">
+                <h3>{{model.name}}</h3>
+
+                {{model.description}}
+                <br>
+
+                <div class="inline m-t-20">
+
+                </div>
+              </div>
+            </div>
+            <!-- END PANEL -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END JUMBOTRON -->
+
+<!-- START CONTAINER FLUID -->
+<div class="container-fluid container-fixed-lg">
+  <div class="row">
+
+    <div class="col-md-7">
+      <!-- START PANEL -->
+      <div class="panel panel-transparent">
+        <div class="panel-heading">
+          <div class="panel-title">Event History</div>
+        </div>
+        <div class="panel-body">
+
+          <div class="panel panel-group panel-transparent ownership-history-panel" data-toggle="collapse" id="accordion">
+
+            {{#each model.events as |event|}}
+              {{event-accordion event=event}}
+            {{/each}}
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-5">
+      <div class="panel">
+        <ul class="nav nav-tabs nav-tabs-simple" role="tablist">
+          <li class="active">
+            <a href="#details" data-toggle="tab" role="tab">Details</a>
+          </li>
+          <li>
+            <a href="#affiliations" data-toggle="tab" role="tab">Affiliations</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="details">
+            <div class="table-responsive">
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td style="width:30%;padding:12px;" class="v-align-middle bold">Nationality</td>
+                    <td style="width:70%;padding:12px;" class="v-align-middle">{{attribute-with-default model.nationality}}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:12px;" class="v-align-middle bold">Gender</td>
+                    <td style="padding:12px;" class="v-align-middle">{{attribute-with-default model.gender}}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:12px;" class="v-align-middle bold">Date of Birth</td>
+                    <td style="padding:12px;" class="v-align-middle">{{attribute-with-default model.dateOfBirth}}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:12px;" class="v-align-middle bold">Date of Death</td>
+                    <td style="padding:12px;" class="v-align-middle">{{attribute-with-default model.dateOfDeath}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="tab-pane " id="affiliations">
+            <div class="table-responsive">
+              {{#if model.affiliations}}
+                <table class="table table-borderless table-condensed">
+                  <tbody>
+                    {{#each model.affiliations as |affiliation|}}
+                      <tr>
+                        <td style="width:30%;" class="v-align-middle bold">{{affiliation.year}}</td>
+                        <td style="width:70%;" class="v-align-middle">
+                          {{#link-to 'affiliations.show' affiliation class='text-master'}}
+                            {{affiliation.place.name}}
+                          {{/link-to}}
+                        </td>
+                      </tr>
+                    {{/each}}
+                  </tbody>
+                </table>
+              {{else}}
+                <p><em>No known affiliations.</em></p>
+              {{/if}}
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- END CONTAINER FLUID -->
