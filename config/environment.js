@@ -21,7 +21,7 @@ module.exports = function(environment) {
     ],
 
     // Settings
-    apiBase: 'https://api2.antiquarium.io',
+    apiBase: 'https://api.antiquarium.io',
     authorizer: 'authorizer:token'
   };
 
