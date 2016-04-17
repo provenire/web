@@ -20,5 +20,12 @@ export default Ember.Component.extend({
   // TODO: Figure out a more universal place for this
   didInsertElement() {
     $.Pages.init();
+
+    // Close the sidebar on mobile
+    if ($.Pages.isVisibleXs() || $.Pages.isVisibleSm()) {
+      this.$('.sidebar-menu li a').click(() => {
+        $('[data-pages="sidebar"]').data()['pg.sidebar'].toggleSidebar();
+      });
+    }
   }
 });
