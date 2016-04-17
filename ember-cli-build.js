@@ -78,28 +78,28 @@ module.exports = function(defaults) {
    */
   var assets = [
     new Funnel('vendor/assets/plugins/font-awesome', {
-      srcDir:  '/fonts', destDir: '/fonts', files: ['**/*.eot','**/*.svg','**/*.ttf','**/*.woff', '**/*.woff2']
+      srcDir:  '/fonts', destDir: '/fonts', include: ['**/*.eot','**/*.svg','**/*.ttf','**/*.woff', '**/*.woff2']
     }),
     // new Funnel('vendor/assets/plugins/boostrapv3', {
-    //   srcDir:  '/fonts', destDir: '/assets/fonts', files: ['**/*.eot','**/*.svg','**/*.ttf','**/*.woff']
+    //   srcDir:  '/fonts', destDir: '/assets/fonts', include: ['**/*.eot','**/*.svg','**/*.ttf','**/*.woff']
     // }),
     new Funnel('vendor/pages/fonts', {
-      srcDir:  '/pages-icon', destDir: '/fonts/pages-icon', files: ['**/*.eot','**/*.svg','**/*.ttf','**/*.woff']
+      srcDir:  '/pages-icon', destDir: '/fonts/pages-icon', include: ['**/*.eot','**/*.svg','**/*.ttf','**/*.woff']
     }),
     // new Funnel('vendor/pages/fonts', {
-    //   srcDir:  '/montserrat', destDir: '/fonts/montserrat', files: ['**/*.svg','**/*.ttf']
+    //   srcDir:  '/montserrat', destDir: '/fonts/montserrat', include: ['**/*.svg','**/*.ttf']
     // }),
     // new Funnel('vendor/assets/plugins/mapplic', {
-    //   srcDir:  '/css/images', destDir: '/assets/images', files: ['**/*.cur','**/*.png','**/*.gif']
+    //   srcDir:  '/css/images', destDir: '/assets/images', include: ['**/*.cur','**/*.png','**/*.gif']
     // }),
     // new Funnel('vendor/assets/plugins/jquery-metrojs', {
-    //   srcDir:  '/images', destDir: '/assets/images', files: ['**/*.jpg','**/*.gif']
+    //   srcDir:  '/images', destDir: '/assets/images', include: ['**/*.jpg','**/*.gif']
     // }),
     // new Funnel('vendor/assets/plugins/jquery-ui', {
-    //   srcDir:  '/images', destDir: '/assets/images', files: ['**/*.png','**/*.gif']
+    //   srcDir:  '/images', destDir: '/assets/images', include: ['**/*.png','**/*.gif']
     // }),
     // new Funnel('vendor/assets/plugins/bootstrap-select2', {
-    //   srcDir:  '/', destDir: '/assets', files: ['*.png','*.gif']
+    //   srcDir:  '/', destDir: '/assets', include: ['*.png','*.gif']
     // }),
     new Funnel('vendor/pages', {
       srcDir:  '/img', destDir: '/img', include: ['**/*.svg','**/*.png','**/*.jpg','**/*.gif']
