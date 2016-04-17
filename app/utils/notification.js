@@ -4,5 +4,5 @@ export default function notification(message, options = {}) {
     position: options.position || 'top',
     type:     options.type || 'success',
     message:  message
-  })
+  });
 }

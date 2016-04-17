@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
       let profileProperties = this.getProperties('name', 'description', 'company', 'location');
       let user = this.get('model');
       user.setProperties(profileProperties);
-      user.save().then((user) => {
+      user.save().then(() => {
         notification('<b>Success! </b> Your profile has been updated.').show();
       }).catch((error) => {
         Ember.Logger.error(error);
