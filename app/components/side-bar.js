@@ -23,7 +23,7 @@ export default Ember.Component.extend({
 
     // Close the sidebar on mobile
     if ($.Pages.isVisibleXs() || $.Pages.isVisibleSm()) {
-      this.$('.sidebar-menu li a').click(() => {
+      this.$('.sidebar-menu li a:not(a[href="javascript:;"])').click(() => {
         $('[data-pages="sidebar"]').data()['pg.sidebar'].toggleSidebar();
       });
     }
