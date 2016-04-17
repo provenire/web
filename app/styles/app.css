@@ -87,3 +87,7 @@
 .ownership-history-panel .panel-heading .panel-title > a > div.row {
   margin-left: 15px;
 }*/
+
+.ember-application .web-loading {
+  display: none;
+}

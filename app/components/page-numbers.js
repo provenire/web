@@ -26,16 +26,17 @@ export default Ember.Component.extend({
     let pages = this.get('totalPages');
     let buffer = this.get('visiblePageBuffer');
     let current = this.get('currentPage');
+    let maxRange = Math.min(buffer * 2, pages);
     let rangeStart = 1;
     let rangeEnd = pages;
 
     if ((current - buffer) > 1)     { rangeStart = (current - buffer); }
     if ((current + buffer) < pages) { rangeEnd   = (current + buffer); }
-    if ((current < buffer) && ((buffer * 2) < pages)) {
-      rangeEnd = buffer * 2;
+    if ((current < buffer) && (maxRange <= pages)) {
+      rangeEnd = maxRange;
     }
-    if (((rangeEnd - current) < buffer) && (buffer * 2) < pages) {
-      rangeStart = pages - (buffer * 2);
+    if (((rangeEnd - current) < buffer) && (maxRange <= pages)) {
+      rangeStart = pages - maxRange;
     }
 
     let range = new Array(rangeEnd - rangeStart);
@@ -50,10 +51,12 @@ export default Ember.Component.extend({
   actions: {
     incrementPage(amount) {
       this.set('currentPage', this.get('currentPage') + amount);
+      window.scrollTo(0,0);
     },
 
     pageClicked(page) {
       this.set('currentPage', page);
+      window.scrollTo(0,0);
     }
   }
 });
