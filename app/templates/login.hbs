@@ -23,6 +23,9 @@
       <p class="p-t-35">Login to Antiquarium Data Platform</p>
 
       <form {{action 'authenticate' on='submit'}} id="form-login" class="p-t-15">
+        {{#if errorMessage}}
+          <span class="text-danger">{{errorMessage}}</span>
+        {{/if}}
         <div class="form-group form-group-default">
           <label for="email">Email</label>
           <div class="controls">
