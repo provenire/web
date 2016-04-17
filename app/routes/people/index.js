@@ -10,7 +10,8 @@ export default Ember.Route.extend({
     return this.store.query('person', {
       page: params.page,
       size: params.size,
-      sort: 'name'
+      sort: 'name',
+      include: 'picture'
     });
   }
 });

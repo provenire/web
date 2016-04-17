@@ -11,7 +11,7 @@ export default Ember.Route.extend({
       page: params.page,
       size: params.size,
       sort: 'name',
-      include: 'sources'
+      include: 'picture'
     });
   }
 });
