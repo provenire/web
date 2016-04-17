@@ -48,9 +48,7 @@ module.exports = function(environment) {
 
   // Simple Auth
   ENV['ember-simple-auth'] = {
-    authenticationRoute: 'login',
-    // routeAfterAuthentication: 'dashboard',
-    // routeIfAlreadyAuthenticated: 'dashboard'
+    authenticationRoute: 'login'
   }
 
   ENV['ember-simple-auth-token'] = {
@@ -64,7 +62,7 @@ module.exports = function(environment) {
     refreshAccessTokens: true,
     serverTokenRefreshEndpoint: ENV.apiBase + '/users/token_refresh',
     refreshLeeway: 300,
-    timeFactor: 1
+    timeFactor: 1000
   }
 
 
