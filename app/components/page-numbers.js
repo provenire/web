@@ -51,12 +51,10 @@ export default Ember.Component.extend({
   actions: {
     incrementPage(amount) {
       this.set('currentPage', this.get('currentPage') + amount);
-      window.scrollTo(0,0);
     },
 
     pageClicked(page) {
       this.set('currentPage', page);
-      window.scrollTo(0,0);
     }
   }
 });

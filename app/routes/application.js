@@ -5,4 +5,11 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
   title: function(tokens) {
     return (tokens.length ? tokens.reverse().join(' | ') + ' | ' : '') + 'Antiquarium';
   },
+
+  actions: {
+    didTransition() {
+      window.scrollTo(0,0);
+      return true;
+    }
+  }
 });
