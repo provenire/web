@@ -20,60 +20,72 @@
     <div class="p-l-50 m-l-20 p-r-50 m-r-20 p-t-50 sm-p-l-15 sm-p-r-15 sm-p-t-40">
       <img alt="logo" width="190" src="/assets/antiquarium/antiquarium/antiquarium@2x.png" data-src="/assets/antiquarium/antiquarium/antiquarium@2x.png" data-src-retina="/assets/antiquarium/antiquarium/antiquarium.png@2x.png">
 
-      {{#unless showForgotPasswordForm}}
-        <p class="p-t-35">Login to Antiquarium Data Platform</p>
+      <p class="p-t-35">Login to Antiquarium Data Platform</p>
 
-        <form {{action 'authenticate' on='submit'}} id="form-login" class="p-t-15">
-          {{#if errorMessage}}
-            <span class="text-danger">{{errorMessage}}</span>
-          {{/if}}
-          <div class="form-group form-group-default">
-            <label for="email">Email</label>
-            <div class="controls">
-              {{input value=identification type='email' class="form-control" required=true}}
-            </div>
+      <form {{action 'authenticate' on='submit'}} id="form-login" class="p-t-15">
+        {{#if errorMessage}}
+          <span class="text-danger">{{errorMessage}}</span>
+        {{/if}}
+        <div class="form-group form-group-default">
+          <label for="email">Email</label>
+          <div class="controls">
+            {{input value=identification type='email' class="form-control" required=true}}
           </div>
+        </div>
 
-          <div class="form-group form-group-default">
-            <label for="password">Password</label>
-            <div class="controls">
-              {{input value=password class='form-control' type='password' required=true}}
-            </div>
+        <div class="form-group form-group-default">
+          <label for="password">Password</label>
+          <div class="controls">
+            {{input value=password class='form-control' type='password' required=true}}
           </div>
+        </div>
 
-          <a href="javascript:;" {{action 'showForgotPassword' true}} class="text-info small pull-right">Forgot Password</a>
-          <button type="submit" class="btn btn-primary btn-cons m-t-5" disabled={{submitted}}>
-            {{#if submitted}}<span class="pull-left"><i class="fa fa-spinner fa-pulse"></i></span>{{/if}}
-            Login
-          </button>
-        </form>
-      {{/unless}}
-
-      {{#if showForgotPasswordForm}}
-        <p class="p-t-35">Reset your password.</p>
-
-        <form {{action 'sendResetInstructions' on='submit'}} id="form-login" class="p-t-15">
-          {{#if errorMessage}}
-            <span class="text-danger">{{errorMessage}}</span>
-          {{/if}}
-          {{#if instructionsSent}}
-            <span class="text-complete p-b-5">Instructions have been sent to the email provided.</span>
-          {{/if}}
-          <div class="form-group form-group-default">
-            <label for="email">Email</label>
-            <div class="controls">
-              {{input value=email type='email' class="form-control" required=true}}
-            </div>
-          </div>
-
-          <a href="javascript:;" {{action 'showForgotPassword' false}} class="text-info small pull-right">Login</a>
-          <button type="submit" class="btn btn-primary btn-cons m-t-5" disabled={{submitted}}>
-            {{#if submitted}}<span class="pull-left"><i class="fa fa-spinner fa-pulse"></i></span>{{/if}} 
-            Send Reset Instructions
-          </button>
-        </form>
-      {{/if}}
+        <a href="#" data-toggle="modal" data-target="#resetPasswordModal" class="text-info small pull-right">Forgot Password</a>
+        <button type="submit" class="btn btn-primary btn-cons m-t-5" disabled={{submitted}}>
+          {{#if submitted}}<span class="pull-left"><i class="fa fa-spinner fa-pulse"></i></span>{{/if}}
+          Login
+        </button>
+      </form>
     </div>
   </div>
   <!-- END Login Right Container-->
+</div>
+
+<!-- Modal -->
+<div class="modal fade fill-in" id="resetPasswordModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+    <i class="pg-close"></i>
+  </button>
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="text-left p-b-5">Reset your password.</h5>
+      </div>
+      <div class="modal-body">
+        {{#if errorMessage}}
+          <span class="text-danger">{{errorMessage}}</span>
+        {{/if}}
+        {{#if instructionsSent}}
+          <span class="text-danger">Instructions have been sent to the email provided.</span>
+        {{/if}}
+        <form {{action 'sendResetInstructions' on='submit'}}>
+          <div class="row">
+            <div class="col-md-9 ">
+              {{input value=email type="email" class="form-control input-lg" placeholder="Your account email address" required=true}}
+            </div>
+            <div class="col-md-3 no-padding sm-m-t-10 sm-text-center">
+              <button type="submit" class="btn btn-primary btn-lg btn-large fs-15" disabled={{submitted}}>
+                {{#if submitted}}<span class="pull-left"><i class="fa fa-spinner fa-pulse"></i></span>{{/if}}
+                 Send Reset Instructions
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
 </div>

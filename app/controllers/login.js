@@ -5,8 +5,6 @@ export default Ember.Controller.extend({
   session: Ember.inject.service('session'),
   errorMessage: null,
   submitted: false,
-
-  showForgotPasswordForm: false,
   instructionsSent: false,
 
   actions: {
@@ -21,10 +19,6 @@ export default Ember.Controller.extend({
         }
         this.set('submitted', false);
       });
-    },
-
-    showForgotPassword(toggle) {
-      this.set('showForgotPasswordForm', toggle);
     },
 
     sendResetInstructions() {
