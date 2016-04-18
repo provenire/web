@@ -1,9 +1,13 @@
 import Ember from 'ember';
+import ENV from'web/config/environment';
 
 export default Ember.Controller.extend({
   session: Ember.inject.service('session'),
   errorMessage: null,
   submitted: false,
+
+  showForgotPasswordForm: false,
+  instructionsSent: false,
 
   actions: {
     authenticate() {
@@ -16,6 +20,23 @@ export default Ember.Controller.extend({
           this.set('errorMessage', "There was a problem signing you in. Please try again later.");
         }
         this.set('submitted', false);
+      });
+    },
+
+    showForgotPassword(toggle) {
+      this.set('showForgotPasswordForm', toggle);
+    },
+
+    sendResetInstructions() {
+      this.set('submitted', true);
+      let email = this.getProperties('email');
+      Ember.$.ajax({ type: 'POST', url: ENV.apiBase + '/users/forgot_password', data: email }).then(() => {
+        this.set('submitted', false);
+        this.set('instructionsSent', true);
+        this.set('errorMessage', null);
+      }).fail((error) => {
+        this.set('submitted', false);
+        this.set('errorMessage', error.responseJSON.errors[0].details);
       });
     }
   }

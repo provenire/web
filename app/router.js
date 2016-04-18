@@ -22,6 +22,7 @@ Router.map(function() {
     this.route('show', { path: '/:source_id' });
   });
   this.route('users', function() {
+    this.route('reset-password', { path: 'reset_password' });
     this.route('show', { path: '/:user_id' });
     this.route('edit', { path: '/:user_id/edit' });
   });
