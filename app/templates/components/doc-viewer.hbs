@@ -1,0 +1,136 @@
+<div class="row full-height no-margin" style="padding-bottom:71px;">
+  <div class="col-md-8 no-padding b-r b-grey sm-b-b full-height">
+    <div class="doc-pages full-height scrollable">
+      {{#each document.pages as |page|}}
+        <div class="doc-page">
+          <div class="doc-page-number visible-md visible-lg visible-xl pull-left">
+            <span class="pull-right">{{page.number}}</span>
+          </div>
+          <img src={{page.image.large}}>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+  <div class="col-md-4 no-padding full-height visible-md visible-lg visible-xl">
+    <div class="bg-white full-height">
+
+      <!-- Tabs -->
+      <div class="panel" style="border:none;">
+        <ul class="nav nav-tabs nav-tabs-simple" role="tablist" data-init-reponsive-tabs="collapse">
+          <li class="active"><a href="#annotations" data-toggle="tab" role="tab">Annotations</a></li>
+          <li><a href="#citations" data-toggle="tab" role="tab">Citations</a></li>
+          <li><a href="#details" data-toggle="tab" role="tab">Details</a></li>
+        </ul>
+        <div class="tab-content no-padding">
+          <div class="tab-pane active" id="annotations">
+            <div class="scrollable">
+              <div class="row no-margin">
+                <div class="col-md-12 no-padding">
+                  <div class="panel panel-transparent">
+                    <div class="panel-heading">
+                      <div class="panel-title"></div>
+                    </div>
+                    <div class="panel-body">
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="citations">
+            <div class="row">
+              <div class="col-md-12 m-l-15 p-r-30">
+                <div class="scrollable full-height">
+                  {{#if document.artifactCitations}}
+                    <h5>Artifacts</h5>
+                    <ol>
+                      {{#each document.artifactCitations as |citation|}}
+                        <div class="citation">
+                          <li>
+                            {{link-to citation.entry.name 'artifacts.show' citation.entry}}<br/>
+                            <span class="hint-text">"{{citation.content}}"</span>
+                          </li>
+                        </div>
+                      {{/each}}
+                    </ol>
+                  {{/if}}
+
+                  {{#if document.eventCitations}}
+                    <h5>Events</h5>
+                    <ol>
+                      {{#each document.eventCitations as |citation|}}
+                        <div class="citation">
+                          <li>
+                            {{link-to citation.entry.name 'events.show' citation.entry}}<br/>
+                            <span class="hint-text">"{{citation.content}}"</span>
+                          </li>
+                        </div>
+                      {{/each}}
+                    </ol>
+                  {{/if}}
+
+                  {{#if document.peopleCitations}}
+                    <h5>People</h5>
+                    <ol>
+                      {{#each document.peopleCitations as |citation|}}
+                        <div class="citation">
+                          <li>
+                            {{link-to citation.entry.name 'people.show' citation.entry}}<br/>
+                            <span class="hint-text">"{{citation.content}}"</span>
+                          </li>
+                        </div>
+                      {{/each}}
+                    </ol>
+                  {{/if}}
+
+                  {{#if document.placeCitations}}
+                    <h5>Places</h5>
+                    <ol>
+                      {{#each document.placeCitations as |citation|}}
+                        <div class="citation">
+                          <li>
+                            {{link-to citation.entry.name 'places.show' citation.entry}}<br/>
+                            <span class="hint-text">"{{citation.content}}"</span>
+                          </li>
+                        </div>
+                      {{/each}}
+                    </ol>
+                  {{/if}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="details">
+            <div class="scrollable">
+              <div class="row no-margin">
+                <div class="col-md-12 no-padding">
+                  <div class="panel panel-transparent">
+                    <div class="panel-heading">
+                      <div class="panel-title"></div>
+                    </div>
+                    <div class="panel-body">
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Annotations -->
+      <!-- <div class="panel panel-transparent" style="border:none;">
+        <div class="panel-heading">
+          <h2 class="panel-title">Annotations</h2>
+        </div>
+        <div class="panel-body">
+          <div class="scroll-wrapper scrollable">
+
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>

@@ -11,6 +11,7 @@ export default Model.extend({
   description: attr('string'),
   createdAt:   attr('date'),
   updatedAt:   attr('date'),
+  modelType:   'Affiliation',
 
   // Affiliation
   title:     attr('string'),

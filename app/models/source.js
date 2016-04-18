@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
 import { hasMany } from 'ember-data/relationships';
@@ -10,6 +11,7 @@ export default Model.extend({
   description: attr('string'),
   createdAt:   attr('date'),
   updatedAt:   attr('date'),
+  modelType:   'Source',
 
   // Source
   kind:        attr('string'),
@@ -21,5 +23,12 @@ export default Model.extend({
   document:    attr('string'),
 
   // Associations
-  pages: hasMany('page')
+  pages: hasMany('page'),
+  citations: hasMany('citations'),
+
+  // Helpers
+  artifactCitations: Ember.computed.filterBy('citations.@each.entry', 'entry.modelType', 'Artifact'),
+  eventCitations: Ember.computed.filterBy('citations.@each.entry', 'entry.modelType', 'Event'),
+  peopleCitations: Ember.computed.filterBy('citations.@each.entry', 'entry.modelType', 'Person'),
+  placeCitations: Ember.computed.filterBy('citations.@each.entry', 'entry.modelType', 'Place'),
 });

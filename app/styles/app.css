@@ -103,6 +103,10 @@
   white-space: nowrap;
 }
 
+/*.scroll-element.scroll-x {
+    display: none !important;
+}*/
+
 .doc {
 
 }
@@ -122,7 +126,10 @@
 }
 
 .doc .doc-pages .doc-page:first-child {
-  margin-top: 25px;
+  margin-top: 20px;
+}
+.doc .doc-pages .doc-page:last-child {
+  margin-bottom: 20px;
 }
 
 .doc .doc-pages .doc-page .doc-page-number {

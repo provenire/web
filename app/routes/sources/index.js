@@ -7,6 +7,11 @@ export default Ember.Route.extend({
   },
 
   model(params) {
-    return this.store.query('source', { page: params.page, size: params.size, sort: 'name' });
+    return this.store.query('source', {
+      page: params.page,
+      size: params.size,
+      sort: 'name',
+      include: 'citations,citations.entry'
+    });
   }
 });
