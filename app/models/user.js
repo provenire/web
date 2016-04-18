@@ -13,5 +13,9 @@ export default Model.extend({
   // User
   email:    attr('string'),
   company:  attr('string'),
-  location: attr('string')
+  location: attr('string'),
+
+  // TODO: Writeonly
+  password:             attr('string'),
+  passwordConfirmation: attr('string')
 });

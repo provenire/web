@@ -31,8 +31,20 @@ export default Ember.Controller.extend({
     },
 
     updatePassword() {
-      // TODO: Implement
-      notification('<b>Error:</b> This has not yet been implemented.', { type: 'danger' }).show();
+      let newPasswordProperties = this.getProperties('password', 'passwordConfirmation');
+      let user = this.get('model');
+
+      user.setProperties(newPasswordProperties);
+
+      user.save().then(() => {
+        notification('<b>Success! </b> Your password has been updated.').show();
+        this.setProperties({ password: null, passwordConfirmation: null });
+      }).catch((error) => {
+        Ember.Logger.error(error);
+        let message = `<b>Error updating profile:</b> ${error.errors.map((err) => err.detail).join(" ")}`;
+        notification(message, { type: 'danger' }).show();
+        user.rollbackAttributes();
+      });
     }
   }
 });
