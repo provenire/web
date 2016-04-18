@@ -8,7 +8,7 @@ export default Model.extend({
 
   number: attr('number'),
   text:   attr('string'),
-  image:  attr('string'),
+  image:  attr(),
 
   // Associations
   source: belongsTo('source')
