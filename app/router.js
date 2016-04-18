@@ -32,6 +32,7 @@ Router.map(function() {
   this.route('events', function() {
     this.route('show', { path: '/:event_id' });
   });
+  this.route('not-found', { path: '/*path' });
 });
 
 export default Router;

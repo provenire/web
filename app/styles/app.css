@@ -35,6 +35,10 @@
   height: 100vh;
 }
 
+.error-container {
+  padding-top: 200px;
+}
+
 
 /*.ownership-history-panel .panel > .panel-heading > .panel-title {
   text-transform: none;

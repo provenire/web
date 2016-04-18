@@ -10,6 +10,12 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     didTransition() {
       window.scrollTo(0,0);
       return true;
+    },
+
+    error(error, transition) {
+      if (error) {
+        return this.transitionTo('/not-found');
+      }
     }
   }
 });
