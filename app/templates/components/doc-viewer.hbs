@@ -104,27 +104,25 @@
           <div class="tab-pane full-height" id="details">
             <div class="row no-margin full-height">
               <div class="col-md-12 no-padding full-height">
-                <div class="scrollable full-height">
-                  <div class="panel panel-transparent full-height">
-                    <div class="panel-body full-height">
-                      <a href={{document.document}}>
-                        <button class="btn btn-primary"><i class="fa fa-download"></i> Download</button>
-                      </a>
-                      <br/><br/>
-                      <dl class="dl-horizontal">
-                        <dt>Name</dt>
-                        <dd>{{document.name}}</dd>
+                <div class="panel panel-transparent full-height">
+                  <div class="panel-body scrollable">
+                    <a href={{document.document}}>
+                      <button class="btn btn-primary"><i class="fa fa-download"></i> Download</button>
+                    </a>
+                    <br/><br/>
+                    <dl class="dl-horizontal">
+                      <dt>Name</dt>
+                      <dd>{{document.name}}</dd>
 
-                        <dt>Description</dt>
-                        <dd>{{attribute-with-default document.description}}</dd>
+                      <dt>Description</dt>
+                      <dd>{{attribute-with-default document.description}}</dd>
 
-                        <dt>Authors</dt>
-                        <dd>{{attribute-with-default document.authors}}</dd>
+                      <dt>Authors</dt>
+                      <dd>{{attribute-with-default document.authors}}</dd>
 
-                        <dt>Attribution</dt>
-                        <dd>{{attribute-with-default document.attribution}}</dd>
-                      </dl>
-                    </div>
+                      <dt>Attribution</dt>
+                      <dd>{{attribute-with-default document.attribution}}</dd>
+                    </dl>
                   </div>
                 </div>
               </div>

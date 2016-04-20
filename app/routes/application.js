@@ -12,7 +12,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       return true;
     },
 
-    error(error, transition) {
+    error(error) {
       if (error) {
         return this.transitionTo('/not-found');
       }
