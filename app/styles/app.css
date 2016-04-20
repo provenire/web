@@ -103,9 +103,9 @@
   white-space: nowrap;
 }
 
-/*.scroll-element.scroll-x {
+.scroll-element.scroll-x {
     display: none !important;
-}*/
+}
 
 .doc {
 
@@ -142,4 +142,16 @@
   width: 650px;
   border: 1px solid lightgray;
   /*flex: auto;*/
+}
+
+.doc .dl-horizontal dt {
+  width: 100px;
+}
+
+.doc .dl-horizontal dd {
+  margin-left: 120px;
+}
+
+.doc .tab-pane .col-md-12 {
+  padding-bottom: 53px !important;
 }
