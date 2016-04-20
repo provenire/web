@@ -15,13 +15,13 @@
     <div class="bg-white full-height">
 
       <!-- Tabs -->
-      <div class="panel" style="border:none;">
+      <div class="panel full-height" style="border:none;">
         <ul class="nav nav-tabs nav-tabs-simple" role="tablist" data-init-reponsive-tabs="collapse">
           <li class="active"><a href="#annotations" data-toggle="tab" role="tab">Annotations</a></li>
           <li><a href="#citations" data-toggle="tab" role="tab">Citations</a></li>
           <li><a href="#details" data-toggle="tab" role="tab">Details</a></li>
         </ul>
-        <div class="tab-content no-padding">
+        <div class="tab-content full-height no-padding">
           <div class="tab-pane active" id="annotations">
             <div class="scrollable">
               <div class="row no-margin">
@@ -38,9 +38,9 @@
               </div>
             </div>
           </div>
-          <div class="tab-pane" id="citations">
-            <div class="row">
-              <div class="col-md-12 m-l-15 p-r-30">
+          <div class="tab-pane full-height" id="citations">
+            <div class="row full-height">
+              <div class="col-md-12 m-l-15 p-r-30 full-height">
                 <div class="scrollable full-height">
                   {{#if document.artifactCitations}}
                     <h5>Artifacts</h5>
@@ -49,7 +49,7 @@
                         <div class="citation">
                           <li>
                             {{link-to citation.entry.name 'artifacts.show' citation.entry}}<br/>
-                            <span class="hint-text">"{{citation.content}}"</span>
+                            {{#if citation.content}}<span class="hint-text">"{{citation.content}}"</span>{{/if}}
                           </li>
                         </div>
                       {{/each}}
@@ -63,7 +63,7 @@
                         <div class="citation">
                           <li>
                             {{link-to citation.entry.name 'events.show' citation.entry}}<br/>
-                            <span class="hint-text">"{{citation.content}}"</span>
+                            {{#if citation.content}}<span class="hint-text">"{{citation.content}}"</span>{{/if}}
                           </li>
                         </div>
                       {{/each}}
@@ -77,7 +77,7 @@
                         <div class="citation">
                           <li>
                             {{link-to citation.entry.name 'people.show' citation.entry}}<br/>
-                            <span class="hint-text">"{{citation.content}}"</span>
+                            {{#if citation.content}}<span class="hint-text">"{{citation.content}}"</span>{{/if}}
                           </li>
                         </div>
                       {{/each}}
@@ -91,7 +91,7 @@
                         <div class="citation">
                           <li>
                             {{link-to citation.entry.name 'places.show' citation.entry}}<br/>
-                            <span class="hint-text">"{{citation.content}}"</span>
+                            {{#if citation.content}}<span class="hint-text">"{{citation.content}}"</span>{{/if}}
                           </li>
                         </div>
                       {{/each}}
@@ -101,16 +101,29 @@
               </div>
             </div>
           </div>
-          <div class="tab-pane" id="details">
-            <div class="scrollable">
-              <div class="row no-margin">
-                <div class="col-md-12 no-padding">
-                  <div class="panel panel-transparent">
-                    <div class="panel-heading">
-                      <div class="panel-title"></div>
-                    </div>
-                    <div class="panel-body">
+          <div class="tab-pane full-height" id="details">
+            <div class="row no-margin full-height">
+              <div class="col-md-12 no-padding full-height">
+                <div class="scrollable full-height">
+                  <div class="panel panel-transparent full-height">
+                    <div class="panel-body full-height">
+                      <a href={{document.document}}>
+                        <button class="btn btn-primary"><i class="fa fa-download"></i> Download</button>
+                      </a>
+                      <br/><br/>
+                      <dl class="dl-horizontal">
+                        <dt>Name</dt>
+                        <dd>{{document.name}}</dd>
 
+                        <dt>Description</dt>
+                        <dd>{{attribute-with-default document.description}}</dd>
+
+                        <dt>Authors</dt>
+                        <dd>{{attribute-with-default document.authors}}</dd>
+
+                        <dt>Attribution</dt>
+                        <dd>{{attribute-with-default document.attribution}}</dd>
+                      </dl>
                     </div>
                   </div>
                 </div>
