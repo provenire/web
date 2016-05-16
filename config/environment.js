@@ -20,7 +20,7 @@ module.exports = function(environment) {
     ],
 
     // Settings
-    apiBase: 'https://api.antiquarium.io',
+    apiBase: 'https://api.provenire.io',
     authorizer: 'authorizer:token'
   };
 

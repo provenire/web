@@ -1,7 +1,7 @@
 {
   "name": "web",
   "version": "0.0.0",
-  "description": "Antiquarium Web App",
+  "description": "Provenire Web App",
   "private": true,
   "directories": {
     "doc": "doc",
