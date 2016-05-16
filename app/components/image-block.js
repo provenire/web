@@ -19,9 +19,9 @@ export default Ember.Component.extend({
 
   defaultSrc: Ember.computed('width', function() {
     if (this.get('width') > 200) {
-      return '/assets/antiquarium/no_photo/500@2x.png';
+      return '/assets/provenire/no_photo/500@2x.png';
     } else {
-      return '/assets/antiquarium/no_photo/100.png';
+      return '/assets/provenire/no_photo/100.png';
     }
   })
 });
